@@ -32,8 +32,9 @@ class Motorista extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nome', 'cnh', 'categoria_cnh', 'tipo', 'status'], 'required', "message"=>"Este campo é obrigatório"],
+            [['nome', 'cnh', 'categoria_cnh', 'tipo', 'status', 'data_validade_cnh'], 'required', "message"=>"Este campo é obrigatório"],
             [['cnh', 'telefone'], 'integer'],
+            //[['data_validade_cnh'], 'date'],
             [['nome'], 'string', 'max' => 60],
             [['categoria_cnh'], 'string', 'max' => 1],
             [['tipo', 'status'], 'string', 'max' => 15]
@@ -47,6 +48,7 @@ class Motorista extends \yii\db\ActiveRecord
     {
         return [
             'nome' => 'Nome',
+            'data_validade_cnh' => "Data de Validade da CNH",
             'cnh' => 'Cnh',
             'categoria_cnh' => 'Categoria Cnh',
             'tipo' => 'Tipo',
