@@ -1,9 +1,7 @@
 <?php
 
-use dosamigos\datepicker\DatePicker;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Modelo */
@@ -16,19 +14,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'ano')->textInput() ?>
-
     <?= $form->field($model, 'id_marca')->dropDownList($marca_lista) ?>
 
-    <?= DatePicker::widget([
-        'model' => $model,
-        'attribute' => 'id_marca',
-        'template' => '{addon}{input}',
-        'clientOptions' => [
-            'autoclose' => true,
-            'format' => 'dd-M-yyyy'
-        ]
-    ]);?>
+    <?= $form->field($model, 'ano')->dropDownList(array_combine(range(date('Y')+1,1900,-1),range(date('Y')+1,1900,-1)) ); ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Novo' : 'Atualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
