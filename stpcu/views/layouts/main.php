@@ -78,6 +78,7 @@ AppAsset::register($this);
                                 <li><?php echo Html::a("Sobre",['site/about'])?></li>
                                 <li><?php echo Html::a("Contato",['site/contact'])?></li>
                                 <li><?php echo Html::a("Marca", ['marca/index']) ?></li>
+                                <li><?php echo Html::a("Modelo", ['modelo/index']) ?></li>
                                 <li><?php echo Html::a("Motorista",['motorista/index'])?></li>
                                 <li><?php echo Html::a("Login",['site/login'])?></li>
                                 <li><a href="#">Solicitações <span class="badge">10</span></a></li>

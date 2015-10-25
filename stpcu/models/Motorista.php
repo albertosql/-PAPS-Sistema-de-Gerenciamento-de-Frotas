@@ -64,11 +64,11 @@ class Motorista extends \yii\db\ActiveRecord
     }
 
     public function getCategoria(){
-        return ['Categoria A' => "Categoria A",
-            "Categoria B" => "Categoria B",
-            "Categoria C" => "Categoria C",
-            "Categoria D" => "Categoria D",
-            "Categoria E" => "Categoria E",];
+        return ['A' => "Categoria A",
+            "B" => "Categoria B",
+            "C" => "Categoria C",
+            "D" => "Categoria D",
+            "E" => "Categoria E",];
     }
 
     public function getTipo(){
