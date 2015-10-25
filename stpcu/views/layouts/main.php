@@ -3,11 +3,11 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-use yii\helpers\Html;
+use app\assets\AppAsset;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
+use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
-use app\assets\AppAsset;
 
 AppAsset::register($this);
 ?>
@@ -77,6 +77,7 @@ AppAsset::register($this);
                                 <li class="active"><?php echo Html::a("Home",['site/index'])?></li>
                                 <li><?php echo Html::a("Sobre",['site/about'])?></li>
                                 <li><?php echo Html::a("Contato",['site/contact'])?></li>
+                                <li><?php echo Html::a("Marca", ['marca/index']) ?></li>
                                 <li><?php echo Html::a("Motorista",['motorista/index'])?></li>
                                 <li><?php echo Html::a("Login",['site/login'])?></li>
                                 <li><a href="#">Solicitações <span class="badge">10</span></a></li>
