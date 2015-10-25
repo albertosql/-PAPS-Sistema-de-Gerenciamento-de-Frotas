@@ -31,6 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'nome',
             'cnh',
             'categoria_cnh',
+            'data_validade_cnh',
             'tipo',
             'status',
             'telefone',
