@@ -4,13 +4,13 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model app\models\TipoCombustivel */
+/* @var $model app\models\Departamento */
 
-$this->title = 'Create Tipo Combustível';
-$this->params['breadcrumbs'][] = ['label' => 'Tipo Combustível', 'url' => ['index']];
+$this->title = 'Novo Departamento';
+$this->params['breadcrumbs'][] = ['label' => 'Departamentos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="tipo-combustivel-create">
+<div class="departamento-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

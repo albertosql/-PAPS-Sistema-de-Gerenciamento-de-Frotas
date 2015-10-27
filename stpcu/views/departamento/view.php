@@ -4,13 +4,13 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\TipoCombustivel */
+/* @var $model app\models\Departamento */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Tipo De Combustível', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Departamentos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="tipo-combustivel-view">
+<div class="departamento-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Você tem certeza que deseja apagar esse tipo de combustível?',
+                'confirm' => 'Você tem certeza que deseja apagar esse Departamento?',
                 'method' => 'post',
             ],
         ]) ?>
