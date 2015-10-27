@@ -58,6 +58,9 @@ class Modelo extends \yii\db\ActiveRecord
         return $this->hasOne(Marca::className(), ['id' => 'id_marca']);
     }
 
+    public function getPrompt(){
+        return ['prompt'=>'Selecione uma opção'];
+    }
 
     /**
      * @return \yii\db\ActiveQuery

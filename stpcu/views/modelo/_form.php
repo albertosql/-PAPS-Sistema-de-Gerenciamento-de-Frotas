@@ -14,9 +14,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'id_marca')->dropDownList($marca_lista) ?>
+    <?= $form->field($model, 'id_marca')->dropDownList($marca_lista, $model->getPrompt()) ?>
 
-    <?= $form->field($model, 'ano')->dropDownList(array_combine(range(date('Y')+1,1900,-1),range(date('Y')+1,1900,-1)) ); ?>
+    <?= $form->field($model, 'ano')->dropDownList(
+            array_combine(range(date('Y')+1,1900,-1),range(date('Y')+1,1900,-1)),
+            $model->getPrompt() ); ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Novo' : 'Atualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

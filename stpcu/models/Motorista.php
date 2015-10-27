@@ -50,7 +50,7 @@ class Motorista extends \yii\db\ActiveRecord
             'nome' => 'Nome',
             'data_validade_cnh' => "Data de Validade da CNH",
             'cnh' => 'Cnh',
-            'categoria_cnh' => 'Categoria Do CNH',
+            'categoria_cnh' => 'Categoria Da CNH',
             'tipo' => 'Tipo',
             'status' => 'Status',
             'telefone' => 'Telefone',
@@ -74,16 +74,18 @@ class Motorista extends \yii\db\ActiveRecord
     }
 
     public function getTipo(){
-        return ["Terceirizado " => "Terceirizado",
-                "Não Terceirizado " => "Não Terceirizado"];
+        return ["T" => "Terceirizado",
+                "NT" => "Não Terceirizado"];
     }
 
     public function getStatus(){
-        return ["Disponível"=>"Disponível",
-                "Não Disponível"=>"Não Disponível"];
+        return ["D"=>"Disponível",
+                "ND"=>"Não Disponível"];
     }
 
-    public  function getPrompt(){
-        return ["Selecione uma opção."];
+    public function getPrompt(){
+        return ['prompt'=>'Selecione uma opção'];
     }
+
+
 }
