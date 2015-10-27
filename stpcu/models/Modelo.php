@@ -58,6 +58,7 @@ class Modelo extends \yii\db\ActiveRecord
         return $this->hasOne(Marca::className(), ['id' => 'id_marca']);
     }
 
+
     /**
      * @return \yii\db\ActiveQuery
      */

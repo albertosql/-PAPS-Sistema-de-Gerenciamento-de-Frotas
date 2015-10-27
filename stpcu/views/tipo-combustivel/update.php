@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\TipoCombustivel */
 
-$this->title = 'Update Tipo Combustivel: ' . ' ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Tipo Combustivels', 'url' => ['index']];
+$this->title = 'Atualizar Tipo de Combustível: ' . ' ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Tipo de Combustível', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>

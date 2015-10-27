@@ -2,8 +2,8 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=db_sgf',
+    'dsn' => 'mysql:host=localhost;dbname=stpcu',
     'username' => 'root',
-    'password' => 'root777',
+    'password' => '',
     'charset' => 'utf8',
 ];

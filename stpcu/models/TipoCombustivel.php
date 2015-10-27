@@ -29,7 +29,7 @@ class TipoCombustivel extends \yii\db\ActiveRecord
     {
         return [
             [['nome'], 'required'],
-            [['nome'], 'integer']
+            [['nome'], 'string', 'max' => 50]
         ];
     }
 

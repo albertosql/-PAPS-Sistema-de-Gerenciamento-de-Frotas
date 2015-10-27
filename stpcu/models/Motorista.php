@@ -50,7 +50,7 @@ class Motorista extends \yii\db\ActiveRecord
             'nome' => 'Nome',
             'data_validade_cnh' => "Data de Validade da CNH",
             'cnh' => 'Cnh',
-            'categoria_cnh' => 'Categoria Cnh',
+            'categoria_cnh' => 'Categoria Do CNH',
             'tipo' => 'Tipo',
             'status' => 'Status',
             'telefone' => 'Telefone',

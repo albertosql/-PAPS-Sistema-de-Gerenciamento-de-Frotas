@@ -28,7 +28,7 @@ class Cor extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nome'], 'required', 'message'=>'Este Campo é Obrigatório'],
+            [['nome'], 'required', 'message'=>'Este campo é obrigatório'],
             [['nome'], 'string', 'max' => 15]
         ];
     }

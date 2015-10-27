@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $searchModel app\models\TipoCombustivelSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Tipo Combustivels';
+$this->title = 'Tipo de Combustívels';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="tipo-combustivel-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Tipo Combustivel', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Novo Tipo de Combustível', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
