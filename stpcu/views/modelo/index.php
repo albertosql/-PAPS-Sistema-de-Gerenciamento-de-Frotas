@@ -1,6 +1,8 @@
 <?php
 
+use app\models\Modelo;
 use yii\grid\GridView;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
@@ -27,8 +29,25 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'nome',
-            'ano',
-            'id_marca',
+            [
+                'attribute' => 'ano',
+                'filter' => Html::activeDropDownList(
+                    $searchModel,
+                    'ano',
+                    array_combine(range(date('Y')+1,1900,-1),range(date('Y')+1,1900,-1)),
+                    ['class'=>'form-control','prompt'=>'Filtrar'  ]),
+            ],
+
+            //'ano',
+            [
+                'attribute' => 'id_marca',
+                'filter' => Html::activeDropDownList(
+                    $searchModel,
+                    'id_marca',
+                    ArrayHelper::map(Modelo::find()->asArray()->all(), 'id', 'nome'),
+                    ['class'=>'form-control','prompt'=>'Filtrar'  ]),
+            ],
+            //'id_marca',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

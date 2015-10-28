@@ -1,10 +1,12 @@
 <?php
 
+use app\models\Motorista;
 use yii\grid\GridView;
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\MotoristaSearch */
+/* @var $model app\models\Motorista */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Motoristas';
@@ -24,16 +26,24 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
             'nome',
             'cnh',
-            'categoria_cnh',
-            'tipo',
-            'status',
+            //'categoria_cnh',
+            [
+                'attribute' => 'categoria_cnh',
+                'filter' => Html::activeDropDownList($searchModel, 'categoria_cnh', Motorista::getCategoria(),['class'=>'form-control','prompt'=>'Filtrar'  ]),
+            ],
+            //'tipo',
+            //'status',
+            [
+                'attribute' => 'tipo',
+                'filter' => Html::activeDropDownList($searchModel, 'tipo', Motorista::getTipo(),['class'=>'form-control','prompt'=>'Filtrar']),
+            ],
             // 'telefone',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
+
     ]); ?>
 
 </div>

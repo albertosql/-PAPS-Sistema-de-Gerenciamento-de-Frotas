@@ -65,7 +65,7 @@ class Motorista extends \yii\db\ActiveRecord
         return $this->hasMany(RespostaSolicitacao::className(), ['id_motorista' => 'cnh']);
     }
 
-    public function getCategoria(){
+    public static function getCategoria(){
         return ['A' => "Categoria A",
             "B" => "Categoria B",
             "C" => "Categoria C",
@@ -73,19 +73,40 @@ class Motorista extends \yii\db\ActiveRecord
             "E" => "Categoria E",];
     }
 
-    public function getTipo(){
+    public static function getTipo(){
         return ["T" => "Terceirizado",
                 "NT" => "Não Terceirizado"];
     }
 
-    public function getStatus(){
+    public static function getStatus(){
         return ["D"=>"Disponível",
                 "ND"=>"Não Disponível"];
     }
 
-    public function getPrompt(){
+    public static function getPrompt(){
         return ['prompt'=>'Selecione uma opção'];
     }
+    public static function getPromptShort(){
+        return ['prompt'=>'Filtrar'];
+    }
 
+    public function afterFind()
+    {
+        if(strcmp($this->tipo,"T") == 0){
+            $this->tipo = "Terceirizado";
+        }
+        if(strcmp($this->tipo,"NT") == 0){
+            $this->tipo = "Não Terceirizado";
+        }
+
+        if (strcmp($this->status,"D") == 0){
+            $this->status = "Disponível";
+        }
+        if (strcmp($this->status,"ND") == 0){
+            $this->status = "Não Disponível";
+        }
+
+        $this->categoria_cnh = "Categoria ".$this->categoria_cnh;
+    }
 
 }
