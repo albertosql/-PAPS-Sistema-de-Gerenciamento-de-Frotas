@@ -78,6 +78,10 @@ AppAsset::register($this);
                                 <li><?php echo Html::a("Cor",['cor/index'])?></li>
                                 <li><?php echo Html::a("Veículo",['veiculo/index'])?></li>
                                 <li><?php echo Html::a("Departamento",['departamento/index'])?></li>
+                                <li><?php echo Html::a("Gastos",['gastos/index'])?></li>
+                                <li><?php echo Html::a("Manutencao",['manutencao/index'])?></li>
+                                <li><?php echo Html::a("Abastecimento",['abastecimento/index'])?></li>
+                                <li><?php echo Html::a("Usuarios",['usuario/index'])?></li>
                                 <li><?php echo Html::a("Login",['site/login'])?></li>
                                 <li><a href="#">Solicitações <span class="badge">10</span></a></li>
                             </ul>

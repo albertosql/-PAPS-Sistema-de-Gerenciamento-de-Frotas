@@ -5,11 +5,12 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
+use app\models\Manutencao;
 
 /**
- * TipoCombustivelSearch represents the model behind the search form about `app\models\TipoCombustivel`.
+ * ManutencaoSearch represents the model behind the search form about `app\models\Manutencao`.
  */
-class TipoCombustivelSearch extends TipoCombustivel
+class ManutencaoSearch extends Manutencao
 {
     /**
      * @inheritdoc
@@ -17,8 +18,9 @@ class TipoCombustivelSearch extends TipoCombustivel
     public function rules()
     {
         return [
-
-            [['nome'], 'safe'],
+            [['id_gasto'], 'integer'],
+            [['data_entrada', 'servico', 'data_saida', 'tipo'], 'safe'],
+            [['custo'], 'number'],
         ];
     }
 
@@ -40,7 +42,7 @@ class TipoCombustivelSearch extends TipoCombustivel
      */
     public function search($params)
     {
-        $query = TipoCombustivel::find();
+        $query = Manutencao::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -55,9 +57,14 @@ class TipoCombustivelSearch extends TipoCombustivel
         }
 
         $query->andFilterWhere([
-            'id' => $this->id,
-            'nome' => $this->nome,
+            'id_gasto' => $this->id_gasto,
+            'data_entrada' => $this->data_entrada,
+            'custo' => $this->custo,
+            'data_saida' => $this->data_saida,
         ]);
+
+        $query->andFilterWhere(['like', 'servico', $this->servico])
+            ->andFilterWhere(['like', 'tipo', $this->tipo]);
 
         return $dataProvider;
     }

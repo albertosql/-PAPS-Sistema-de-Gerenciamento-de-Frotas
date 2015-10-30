@@ -5,11 +5,12 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
+use app\models\Abastecimento;
 
 /**
- * TipoCombustivelSearch represents the model behind the search form about `app\models\TipoCombustivel`.
+ * AbastecimentoSearch represents the model behind the search form about `app\models\Abastecimento`.
  */
-class TipoCombustivelSearch extends TipoCombustivel
+class AbastecimentoSearch extends Abastecimento
 {
     /**
      * @inheritdoc
@@ -17,8 +18,8 @@ class TipoCombustivelSearch extends TipoCombustivel
     public function rules()
     {
         return [
-
-            [['nome'], 'safe'],
+            [['id_gasto', 'id_posto'], 'integer'],
+            [['preco_litro'], 'number'],
         ];
     }
 
@@ -40,7 +41,7 @@ class TipoCombustivelSearch extends TipoCombustivel
      */
     public function search($params)
     {
-        $query = TipoCombustivel::find();
+        $query = Abastecimento::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -55,8 +56,9 @@ class TipoCombustivelSearch extends TipoCombustivel
         }
 
         $query->andFilterWhere([
-            'id' => $this->id,
-            'nome' => $this->nome,
+            'id_gasto' => $this->id_gasto,
+            'preco_litro' => $this->preco_litro,
+            'id_posto' => $this->id_posto,
         ]);
 
         return $dataProvider;

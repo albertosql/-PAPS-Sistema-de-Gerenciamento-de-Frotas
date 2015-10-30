@@ -4,22 +4,22 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Marca */
+/* @var $model app\models\Gastos */
 
-$this->title = "Visualizar Marca";
-$this->params['breadcrumbs'][] = ['label' => 'Marcas', 'url' => ['index']];
+$this->title = $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Gastos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="marca-view">
+<div class="gastos-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Atualizar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Deletar', ['delete', 'id' => $model->id], [
+        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Você tem certeza que deseja apagar essa marca?',
+                'confirm' => 'Are you sure you want to delete this item?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -29,7 +29,9 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'nome',
+            'data',
+            'km',
+            'id_veiculo',
         ],
     ]) ?>
 

@@ -28,7 +28,8 @@ class TipoCombustivel extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nome'], 'required'],
+            [['nome'], 'unique', "message"=>"Combustível existente no sistema"],
+            [['nome'], 'required', "message"=>"Este campo é obrigatório"],
             [['nome'], 'string', 'max' => 50]
         ];
     }

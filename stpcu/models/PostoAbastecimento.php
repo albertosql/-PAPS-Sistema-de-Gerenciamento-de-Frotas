@@ -30,6 +30,7 @@ class PostoAbastecimento extends \yii\db\ActiveRecord
     {
         return [
             [['nome', 'endereco'], 'required', 'message'=>'Este Campo é Obrigatório'],
+            [['endereco'], 'unique'],
             [['nome'], 'string', 'max' => 45],
             [['endereco'], 'string', 'max' => 50, 'message'=>'Este Campo é Obrigatório']
         ];

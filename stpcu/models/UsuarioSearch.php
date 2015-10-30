@@ -5,11 +5,12 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
+use app\models\Usuario;
 
 /**
- * TipoCombustivelSearch represents the model behind the search form about `app\models\TipoCombustivel`.
+ * UsuarioSearch represents the model behind the search form about `app\models\Usuario`.
  */
-class TipoCombustivelSearch extends TipoCombustivel
+class UsuarioSearch extends Usuario
 {
     /**
      * @inheritdoc
@@ -17,8 +18,8 @@ class TipoCombustivelSearch extends TipoCombustivel
     public function rules()
     {
         return [
-
-            [['nome'], 'safe'],
+            [['id', 'id_departamento'], 'integer'],
+            [['nome', 'email', 'senha', 'nome_usuario', 'tipo', 'descricao'], 'safe'],
         ];
     }
 
@@ -40,7 +41,7 @@ class TipoCombustivelSearch extends TipoCombustivel
      */
     public function search($params)
     {
-        $query = TipoCombustivel::find();
+        $query = Usuario::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -56,8 +57,15 @@ class TipoCombustivelSearch extends TipoCombustivel
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'nome' => $this->nome,
+            'id_departamento' => $this->id_departamento,
         ]);
+
+        $query->andFilterWhere(['like', 'nome', $this->nome])
+            ->andFilterWhere(['like', 'email', $this->email])
+            ->andFilterWhere(['like', 'senha', $this->senha])
+            ->andFilterWhere(['like', 'nome_usuario', $this->nome_usuario])
+            ->andFilterWhere(['like', 'tipo', $this->tipo])
+            ->andFilterWhere(['like', 'descricao', $this->descricao]);
 
         return $dataProvider;
     }

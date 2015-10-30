@@ -29,7 +29,8 @@ class Cor extends \yii\db\ActiveRecord
     {
         return [
             [['nome'], 'required', 'message'=>'Este campo é obrigatório'],
-            [['nome'], 'string', 'max' => 15]
+            [['nome'], 'string', 'max' => 15],
+            [['nome'], 'unique', 'message'=>'Cor já cadastrada no sistema']
         ];
     }
 

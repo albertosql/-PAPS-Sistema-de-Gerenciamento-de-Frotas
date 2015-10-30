@@ -29,7 +29,8 @@ class Departamento extends \yii\db\ActiveRecord
     {
         return [
             [['nome'], 'required', 'message'=>'Este campo é obrigatório'],
-            [['nome'], 'string', 'max' => 45]
+            [['nome'], 'string', 'max' => 45],
+            [['nome'], 'unique', 'message'=>'Departamento já cadastrado no sistema']
         ];
     }
 
