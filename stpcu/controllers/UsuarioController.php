@@ -3,11 +3,13 @@
 namespace app\controllers;
 
 use Yii;
+use app\models\Departamento;
 use app\models\Usuario;
 use app\models\UsuarioSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\ArrayHelper;
 
 /**
  * UsuarioController implements the CRUD actions for Usuario model.
@@ -60,13 +62,14 @@ class UsuarioController extends Controller
      */
     public function actionCreate()
     {
+        $departamento = ArrayHelper::map(Departamento::find()->all(), 'id', 'nome');
         $model = new Usuario();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
-                'model' => $model,
+                'model' => $model, 'departamento_lista'=>$departamento
             ]);
         }
     }
@@ -79,13 +82,14 @@ class UsuarioController extends Controller
      */
     public function actionUpdate($id)
     {
+        $departamento = ArrayHelper::map(Departamento::find()->all(), 'id', 'nome');
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
-                'model' => $model,
+                'model' => $model, 'departamento_lista'=>$departamento
             ]);
         }
     }

@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\Cor;
 use app\models\Modelo;
+use app\models\TipoCombustivel;
 use app\models\Veiculo;
 use app\models\VeiculoSearch;
 use Yii;
@@ -65,6 +66,7 @@ class VeiculoController extends Controller
     {
         $modelo = ArrayHelper::map(Modelo::find()->all(), 'id', 'nome');
         $cor = ArrayHelper::map(Cor::find()->all(), 'id', 'nome');
+        $combustivel = ArrayHelper::map(TipoCombustivel::find()->all(), 'id', 'nome');
 
         $model = new Veiculo();
 
@@ -74,7 +76,8 @@ class VeiculoController extends Controller
             return $this->render('create', [
                 'model' => $model,
                 'modelo_lista'=>$modelo,
-                'cor_lista'=>$cor
+                'cor_lista'=>$cor,
+                'combustivel_lista'=>$combustivel
             ]);
         }
     }
@@ -87,6 +90,10 @@ class VeiculoController extends Controller
      */
     public function actionUpdate($id)
     {
+        $combustivel = ArrayHelper::map(TipoCombustivel::find()->all(), 'id', 'nome');
+        $modelo = ArrayHelper::map(Modelo::find()->all(), 'id', 'nome');
+        $cor = ArrayHelper::map(Cor::find()->all(), 'id', 'nome');
+
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -94,6 +101,9 @@ class VeiculoController extends Controller
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'modelo_lista'=>$modelo,
+                'cor_lista'=>$cor,
+                'combustivel_lista'=>$combustivel
             ]);
         }
     }

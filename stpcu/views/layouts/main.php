@@ -84,6 +84,17 @@ AppAsset::register($this);
                                 <li><?php echo Html::a("Usuarios",['usuario/index'])?></li>
                                 <li><?php echo Html::a("Login",['site/login'])?></li>
                                 <li><a href="#">Solicitações <span class="badge">10</span></a></li>
+                                <li class="active">
+                                    <a href="#" data-toggle="collapse" data-target="#toggleDemo2" data-parent="#sidenav01" class="collapsed">
+                                        <span class=""></span> Gastos <span class="caret pull-right"></span>
+                                    </a>
+                                    <div class="collapse" id="toggleDemo2" style="height: 0px;">
+                                        <ul class="nav nav-list">
+                                            <li><a href="views/manutencao/index">Manutenção</a></li>
+                                            <li><a href="views/abastecimento/index">Abastecimento</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                         <!--/.nav-collapse -->

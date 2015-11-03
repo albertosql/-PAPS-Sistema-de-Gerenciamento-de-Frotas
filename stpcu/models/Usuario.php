@@ -35,11 +35,10 @@ class Usuario extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nome', 'email', 'senha', 'nome_usuario', 'tipo', 'id_departamento'], 'required'],
+            [['nome', 'email', 'senha', 'nome_usuario', 'id_departamento'], 'required', 'message'=>'Este campo é obrigatório'],
             [['id_departamento'], 'integer'],
             [['nome'], 'string', 'max' => 60],
             [['email', 'senha', 'nome_usuario', 'descricao'], 'string', 'max' => 45],
-            [['tipo'], 'string', 'max' => 30]
         ];
     }
 
@@ -56,7 +55,7 @@ class Usuario extends \yii\db\ActiveRecord
             'nome_usuario' => 'Nome Usuario',
             'tipo' => 'Tipo',
             'descricao' => 'Descricao',
-            'id_departamento' => 'Id Departamento',
+            'id_departamento' => 'Departamento',
         ];
     }
 
@@ -66,6 +65,10 @@ class Usuario extends \yii\db\ActiveRecord
     public function getSolicitacaos()
     {
         return $this->hasMany(Solicitacao::className(), ['id_usuario' => 'id']);
+    }
+
+    public function getPrompt(){
+        return ['prompt'=>'Selecione uma opção'];
     }
 
     /**

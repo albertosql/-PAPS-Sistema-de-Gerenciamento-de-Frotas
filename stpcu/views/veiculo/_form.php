@@ -12,6 +12,8 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
+    <?= $form->field($model, 'renavam')->textInput(['maxlength' => true]) ?>
+
     <?= $form->field($model, 'cidade')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'chassi')->textInput(['maxlength' => true]) ?>
@@ -40,7 +42,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id_cor')->dropDownList($cor_lista)?>
 
-    <?= $form->field($model, 'id_tipo_combustivel')->textInput() ?>
+    <?= $form->field($model, 'id_tipo_combustivel')->dropDownList($combustivel_lista)?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Novo' : 'Atualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

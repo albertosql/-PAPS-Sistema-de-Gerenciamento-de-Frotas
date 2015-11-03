@@ -47,13 +47,15 @@ class Veiculo extends \yii\db\ActiveRecord
     {
         return [
             [['cidade', 'chassi', 'num_patrimonio', 'status', 'adquirido_de', 'uf_atual', 'uf_anterior', 'placa_atual', 'placa_anterior', 'potencia', 'id_modelo', 'id_cor', 'id_tipo_combustivel'], 'required', 'message'=>'Este campo é obrigatório'],
-            [['num_patrimonio', 'placa_atual', 'placa_anterior', 'potencia', 'id_modelo', 'id_cor', 'id_tipo_combustivel'], 'integer'],
+            [['num_patrimonio', 'potencia', 'id_modelo', 'id_cor', 'id_tipo_combustivel'], 'integer'],
             [['cidade'], 'string', 'max' => 35],
             [['chassi'], 'string', 'max' => 18],
             [['lotacao'], 'string', 'max' => 30],
             [['status'], 'string', 'max' => 25],
             [['observacao', 'adquirido_de'], 'string', 'max' => 45],
-            [['uf_atual', 'uf_anterior'], 'string', 'max' => 2]
+            [['uf_atual', 'uf_anterior'], 'string', 'max' => 2],
+            [['placa_atual', 'placa_anterior'], 'string'],
+            [['renavam'], 'integer']
         ];
     }
 
