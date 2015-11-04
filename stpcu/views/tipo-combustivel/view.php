@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\TipoCombustivel */
 
-$this->title = $model->id;
+$this->title =  "Visualizar Tipo de Combustível";
 $this->params['breadcrumbs'][] = ['label' => 'Tipo De Combustível', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

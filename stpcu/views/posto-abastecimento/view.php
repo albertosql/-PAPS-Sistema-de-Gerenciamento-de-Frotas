@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\PostoAbastecimento */
 
-$this->title = $model->id;
+$this->title =  "Visualizar Posto de Abastecimento";
 $this->params['breadcrumbs'][] = ['label' => 'Posto Abastecimentos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

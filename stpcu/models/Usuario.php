@@ -39,6 +39,11 @@ class Usuario extends \yii\db\ActiveRecord
             [['id_departamento'], 'integer'],
             [['nome'], 'string', 'max' => 60],
             [['email', 'senha', 'nome_usuario', 'descricao'], 'string', 'max' => 45],
+            [['nome_usuario'], 'unique', "message"=>"Username existente no sistema"],
+            ['nome', 'match', 'pattern'=>'/^[a-z\s]{1,60}$/'],
+            ['email', 'match', 'pattern'=>'/^[a-zA-Z0-9]+[a-zA-Z0-9_.-]+@{1}[a-zA-Z0-9_.-]*\\.+[a-z]{2,4}/'],
+            ['nome_usuario', 'match', 'pattern'=>'/^[a-z0-9_-]{1,45}$/']
+
         ];
     }
 
@@ -52,7 +57,7 @@ class Usuario extends \yii\db\ActiveRecord
             'nome' => 'Nome',
             'email' => 'Email',
             'senha' => 'Senha',
-            'nome_usuario' => 'Nome Usuario',
+            'nome_usuario' => 'Username',
             'tipo' => 'Tipo',
             'descricao' => 'Descricao',
             'id_departamento' => 'Departamento',

@@ -68,23 +68,23 @@ AppAsset::register($this);
 
                             <ul class="nav navbar-nav">
                                 <li class="active"><?php echo Html::a("Home",['site/index'])?></li>
-                                <li><?php echo Html::a("Sobre",['site/about'])?></li>
-                                <li><?php echo Html::a("Contato",['site/contact'])?></li>
+                                <!-- <li><?php echo Html::a("Sobre",['site/about'])?></li>-->
+                                <!-- <li><?php echo Html::a("Contato",['site/contact'])?></li>-->
                                 <li><?php echo Html::a("Marca", ['marca/index']) ?></li>
                                 <li><?php echo Html::a("Modelo", ['modelo/index']) ?></li>
                                 <li><?php echo Html::a("Motorista",['motorista/index'])?></li>
                                 <li><?php echo Html::a("Tipo Combustível",['tipo-combustivel/index'])?></li>
                                 <li><?php echo Html::a("Posto Abastecimento",['posto-abastecimento/index'])?></li>
                                 <li><?php echo Html::a("Cor",['cor/index'])?></li>
-                                <li><?php echo Html::a("Veículo",['veiculo/index'])?></li>
-                                <li><?php echo Html::a("Departamento",['departamento/index'])?></li>
-                                <li><?php echo Html::a("Gastos",['gastos/index'])?></li>
-                                <li><?php echo Html::a("Manutencao",['manutencao/index'])?></li>
-                                <li><?php echo Html::a("Abastecimento",['abastecimento/index'])?></li>
+                                <!-- <li><?php echo Html::a("Veículo",['veiculo/index'])?></li>-->
+                                <!-- <li><?php echo Html::a("Departamento",['departamento/index'])?></li>-->
+                                <!-- <li><?php echo Html::a("Gastos",['gastos/index'])?></li> -->
+                                <!-- <li><?php echo Html::a("Manutencao",['manutencao/index'])?></li> -->
+                                <!-- <li><?php echo Html::a("Abastecimento",['abastecimento/index'])?></li> -->
                                 <li><?php echo Html::a("Usuarios",['usuario/index'])?></li>
-                                <li><?php echo Html::a("Login",['site/login'])?></li>
-                                <li><a href="#">Solicitações <span class="badge">10</span></a></li>
-                                <li class="active">
+                                <!-- <li><?php echo Html::a("Login",['site/login'])?></li> -->
+                                <!-- <li><a href="#">Solicitações <span class="badge">10</span></a></li> -->
+                                <!-- <li class="active">
                                     <a href="#" data-toggle="collapse" data-target="#toggleDemo2" data-parent="#sidenav01" class="collapsed">
                                         <span class=""></span> Gastos <span class="caret pull-right"></span>
                                     </a>
@@ -94,7 +94,7 @@ AppAsset::register($this);
                                             <li><a href="views/abastecimento/index">Abastecimento</a></li>
                                         </ul>
                                     </div>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                         <!--/.nav-collapse -->

@@ -29,7 +29,8 @@ class Marca extends \yii\db\ActiveRecord
     {
         return [
             [['nome'], 'required', "message"=>"Este campo é obrigatório"],
-            [['nome'], 'string', 'max' => 30]
+            [['nome'], 'string', 'max' => 30],
+            [['nome'], 'unique', "message"=>"Marca existente no sistema"]
         ];
     }
 
@@ -51,4 +52,6 @@ class Marca extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Modelo::className(), ['id_marca' => 'id']);
     }
+
+
 }

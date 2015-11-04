@@ -3,6 +3,7 @@
 use dosamigos\datepicker\DatePicker;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\widgets\MaskedInput;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Motorista */
@@ -15,7 +16,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'cnh')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'cnh') -> widget(\yii\widgets\MaskedInput::className(), [
+        'mask' => '99999999999',
+    ])
+    ?>
 
     <?= $form->field($model, 'data_validade_cnh')->widget(
         DatePicker::className(), [
@@ -36,8 +40,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'status')->dropDownList($model->getStatus(), $model->getPrompt())?>
 
-
-    <?= $form->field($model, 'telefone')->textInput() ?>
+    <?= $form->field($model, 'telefone')->widget(\yii\widgets\MaskedInput::className(), [
+        'mask' => '999999999',
+    ]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Novo' : 'Atualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

@@ -9,8 +9,8 @@ $this->title = 'Sistema de Transporte da PCU';
     <div class="jumbotron">
         <h1>Sejam bem-vindos!</h1>
 
-        <p class="lead">Você está acessando o Sistena de de Transporte da PCU - UFAM .</p>
+        <p class="lead">Você está acessando o Sistema de de Transporte da PCU - UFAM.</p>
 
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+
     </div>
 </div>
