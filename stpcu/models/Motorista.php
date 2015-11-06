@@ -36,10 +36,12 @@ class Motorista extends \yii\db\ActiveRecord
             [['cnh', 'telefone'], 'integer'],
             //[['data_validade_cnh'], 'date'],
             [['nome'], 'string', 'max' => 60],
-            [['categoria_cnh'], 'string', 'max' => 1],
+            [['categoria_cnh'], 'string', 'max' => 2],
             [['tipo', 'status'], 'string', 'max' => 15],
             [['cnh'], 'unique', "message"=>"CNH existente no sistema"],
-            ['nome', 'match', 'pattern'=>'/^[a-z\s]{6,20}$/']
+            ['nome', 'match', 'pattern'=>'/^[a-z\s]{6,20}$/'],
+            ['categoria_cnh', 'match', 'pattern'=>'/^[a-zA_Z]/'],
+
         ];
     }
 
@@ -51,8 +53,8 @@ class Motorista extends \yii\db\ActiveRecord
         return [
             'nome' => 'Nome',
             'data_validade_cnh' => "Data de Validade da CNH",
-            'cnh' => 'Cnh',
-            'categoria_cnh' => 'Categoria Da CNH',
+            'cnh' => 'CNH',
+            'categoria_cnh' => 'Categoria da CNH',
             'tipo' => 'Tipo',
             'status' => 'Status',
             'telefone' => 'Telefone',
@@ -65,6 +67,22 @@ class Motorista extends \yii\db\ActiveRecord
     public function getRespostaSolicitacaos()
     {
         return $this->hasMany(RespostaSolicitacao::className(), ['id_motorista' => 'cnh']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getManutencao()
+    {
+        return $this->hasMany(Manutencao::className(), ['id_motorista' => 'cnh']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getAbastecimento()
+    {
+        return $this->hasMany(Abastecimento::className(), ['id_motorista' => 'cnh']);
     }
 
     public static function getCategoria(){
@@ -88,6 +106,7 @@ class Motorista extends \yii\db\ActiveRecord
     public static function getPrompt(){
         return ['prompt'=>'Selecione uma opção'];
     }
+
     public static function getPromptShort(){
         return ['prompt'=>'Filtrar'];
     }

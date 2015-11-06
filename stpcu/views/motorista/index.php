@@ -28,11 +28,11 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
             'nome',
             'cnh',
-            //'categoria_cnh',
-            [
+            'categoria_cnh',
+            /*[
                 'attribute' => 'categoria_cnh',
                 'filter' => Html::activeDropDownList($searchModel, 'categoria_cnh', Motorista::getCategoria(),['class'=>'form-control','prompt'=>'Filtrar'  ]),
-            ],
+            ],*/
             //'tipo',
             //'status',
             [

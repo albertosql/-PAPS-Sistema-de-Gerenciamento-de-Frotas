@@ -19,7 +19,7 @@ class UsuarioSearch extends Usuario
     {
         return [
             [['id', 'id_departamento'], 'integer'],
-            [['nome', 'email', 'senha', 'nome_usuario', 'descricao'], 'safe'],
+            [['nome', 'email', 'senha', 'confirma_senha', 'nome_usuario', 'descricao'], 'safe'],
         ];
     }
 
@@ -63,6 +63,7 @@ class UsuarioSearch extends Usuario
         $query->andFilterWhere(['like', 'nome', $this->nome])
             ->andFilterWhere(['like', 'email', $this->email])
             ->andFilterWhere(['like', 'senha', $this->senha])
+            ->andFilterWhere(['like', 'confirma_senha', $this->confirma_senha])
             ->andFilterWhere(['like', 'nome_usuario', $this->nome_usuario])
             ->andFilterWhere(['like', 'descricao', $this->descricao]);
 

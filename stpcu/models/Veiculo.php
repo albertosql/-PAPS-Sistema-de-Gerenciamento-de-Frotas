@@ -46,7 +46,7 @@ class Veiculo extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['cidade', 'chassi', 'num_patrimonio', 'status', 'adquirido_de', 'uf_atual', 'uf_anterior', 'placa_atual', 'placa_anterior', 'potencia', 'id_modelo', 'id_cor', 'id_tipo_combustivel'], 'required', 'message'=>'Este campo é obrigatório'],
+            [['renavam', 'cidade', 'chassi', 'num_patrimonio', 'status', 'adquirido_de', 'uf_atual', 'uf_anterior', 'placa_atual', 'placa_anterior', 'potencia', 'id_modelo', 'id_cor', 'id_tipo_combustivel'], 'required', 'message'=>'Este campo é obrigatório'],
             [['num_patrimonio', 'potencia', 'id_modelo', 'id_cor', 'id_tipo_combustivel'], 'integer'],
             [['cidade'], 'string', 'max' => 35],
             [['chassi'], 'string', 'max' => 18],
@@ -81,15 +81,25 @@ class Veiculo extends \yii\db\ActiveRecord
             'id_modelo' => 'Nome do Modelo',
             'id_cor' => 'Nome da Cor',
             'id_tipo_combustivel' => 'Tipo Combustível',
+            'ano_fabricacao' => 'Ano de Fabricação',
+            'ano_modelo' => 'Ano do Modelo',
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getGastos()
+    public function getManutencao()
     {
-        return $this->hasMany(Gastos::className(), ['id_veiculo' => 'renavam']);
+        return $this->hasMany(Manutencao::className(), ['id_veiculo' => 'renavam']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getAbastecimento()
+    {
+        return $this->hasMany(Abastecimento::className(), ['id_veiculo' => 'renavam']);
     }
 
     /**
@@ -103,6 +113,11 @@ class Veiculo extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
+
+    public function getPrompt(){
+        return ['prompt'=>'Selecione uma opção'];
+    }
+
     public function getIdCor()
     {
         return $this->hasOne(Cor::className(), ['id' => 'id_cor']);

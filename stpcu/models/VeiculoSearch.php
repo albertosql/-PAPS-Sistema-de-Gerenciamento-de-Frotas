@@ -17,7 +17,7 @@ class VeiculoSearch extends Veiculo
     public function rules()
     {
         return [
-            [['renavam', 'num_patrimonio', 'placa_atual', 'placa_anterior', 'potencia', 'id_modelo', 'id_cor', 'id_tipo_combustivel'], 'integer'],
+            [['renavam', 'num_patrimonio', 'placa_atual', 'placa_anterior', 'potencia', 'id_modelo', 'id_cor', 'id_tipo_combustivel', 'ano_fabricacao', 'ano_modelo'], 'integer'],
             [['cidade', 'chassi', 'lotacao', 'status', 'observacao', 'adquirido_de', 'uf_atual', 'uf_anterior'], 'safe'],
         ];
     }
@@ -63,6 +63,8 @@ class VeiculoSearch extends Veiculo
             'id_modelo' => $this->id_modelo,
             'id_cor' => $this->id_cor,
             'id_tipo_combustivel' => $this->id_tipo_combustivel,
+            'ano_fabricacao' => $this->ano_fabricacao,
+            'ano_modelo' => $this->ano_modelo
         ]);
 
         $query->andFilterWhere(['like', 'cidade', $this->cidade])

@@ -44,6 +44,14 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id_tipo_combustivel')->dropDownList($combustivel_lista)?>
 
+    <?= $form->field($model, 'ano_fabricacao')->dropDownList(
+        array_combine(range(date('Y')+1,1900,-1),range(date('Y')+1,1900,-1)),
+        $model->getPrompt() ); ?>
+
+    <?= $form->field($model, 'ano_modelo')->dropDownList(
+        array_combine(range(date('Y')+1,1900,-1),range(date('Y')+1,1900,-1)),
+        $model->getPrompt() ); ?>
+
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Novo' : 'Atualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

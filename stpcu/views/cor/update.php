@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Cor */
 
-$this->title = 'Atualizar Cor: ' . ' ' . $model->id;
+$this->title = 'Atualizar Cor: ' . ' ' . $model->nome;
 $this->params['breadcrumbs'][] = ['label' => 'Cores', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Atualizar';
+$this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="cor-update">
 

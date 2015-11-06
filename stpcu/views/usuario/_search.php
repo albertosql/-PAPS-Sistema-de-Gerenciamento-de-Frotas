@@ -23,6 +23,8 @@ use yii\widgets\ActiveForm;
 
     <?php // $form->field($model, 'senha') ?>
 
+    <?php // echo $form->field($model, 'confirma_senha') ?>
+
     <?= $form->field($model, 'nome_usuario') ?>
 
     <?php // echo $form->field($model, 'tipo') ?>

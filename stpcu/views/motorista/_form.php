@@ -34,7 +34,7 @@ use yii\widgets\MaskedInput;
             ]
         ]);?>
 
-    <?= $form->field($model, 'categoria_cnh')->dropDownList($model->getCategoria(), $model->getPrompt()) ?>
+    <?= $form->field($model, 'categoria_cnh')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'tipo')->dropDownList($model->getTipo(), $model->getPrompt()) ?>
 

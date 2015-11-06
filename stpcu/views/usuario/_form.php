@@ -16,7 +16,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'senha')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'senha')->passwordInput() ?>
+
+    <?= $form->field($model, 'confirma_senha')->passwordInput() ?>
 
     <?= $form->field($model, 'nome_usuario')->textInput(['maxlength' => true]) ?>
 

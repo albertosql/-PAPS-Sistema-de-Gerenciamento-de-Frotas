@@ -17,7 +17,7 @@ class ModeloSearch extends Modelo
     public function rules()
     {
         return [
-            [['id', 'ano', 'id_marca'], 'integer'],
+            [['id', 'id_marca'], 'integer'],
             [['nome'], 'safe'],
         ];
     }
@@ -56,7 +56,6 @@ class ModeloSearch extends Modelo
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'ano' => $this->ano,
             'id_marca' => $this->id_marca,
         ]);
 

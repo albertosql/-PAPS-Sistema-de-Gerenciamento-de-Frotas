@@ -35,15 +35,15 @@ class Usuario extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nome', 'email', 'senha', 'nome_usuario', 'id_departamento'], 'required', 'message'=>'Este campo é obrigatório'],
+            [['nome', 'email', 'confirma_senha', 'senha', 'nome_usuario', 'id_departamento'], 'required', 'message'=>'Este campo é obrigatório'],
             [['id_departamento'], 'integer'],
             [['nome'], 'string', 'max' => 60],
-            [['email', 'senha', 'nome_usuario', 'descricao'], 'string', 'max' => 45],
+            [['email', 'senha', 'confirma_senha', 'nome_usuario', 'descricao'], 'string', 'max' => 45],
             [['nome_usuario'], 'unique', "message"=>"Username existente no sistema"],
-            ['nome', 'match', 'pattern'=>'/^[a-z\s]{1,60}$/'],
+            ['nome', 'match', 'pattern'=>'/^[a-zA-Z\s]{1,60}$/'],
             ['email', 'match', 'pattern'=>'/^[a-zA-Z0-9]+[a-zA-Z0-9_.-]+@{1}[a-zA-Z0-9_.-]*\\.+[a-z]{2,4}/'],
-            ['nome_usuario', 'match', 'pattern'=>'/^[a-z0-9_-]{1,45}$/']
-
+            ['nome_usuario', 'match', 'pattern'=>'/^[a-z0-9_-]{1,45}$/'],
+            [['confirma_senha'], 'compare', 'compareAttribute' => 'senha', 'message' => 'Repita sua Senha']
         ];
     }
 
@@ -57,9 +57,10 @@ class Usuario extends \yii\db\ActiveRecord
             'nome' => 'Nome',
             'email' => 'Email',
             'senha' => 'Senha',
+            'confirma_senha' => 'Confirmar a Senha',
             'nome_usuario' => 'Username',
             'tipo' => 'Tipo',
-            'descricao' => 'Descricao',
+            'descricao' => 'Descrição',
             'id_departamento' => 'Departamento',
         ];
     }

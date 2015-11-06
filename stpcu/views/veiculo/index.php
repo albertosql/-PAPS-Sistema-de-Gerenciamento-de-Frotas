@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Veiculo', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Novo Veiculo', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -41,6 +41,17 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'id_modelo',
             // 'id_cor',
             // 'id_tipo_combustivel',
+            // 'ano_fabricacao',
+            // 'ano_modelo',
+
+            [
+                'attribute' => 'ano_fabricacao',
+                'filter' => Html::activeDropDownList(
+                    $searchModel,
+                    'ano_fabricacao',
+                    array_combine(range(date('Y')+1,1900,-1),range(date('Y')+1,1900,-1)),
+                    ['class'=>'form-control','prompt'=>'Filtrar'  ]),
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

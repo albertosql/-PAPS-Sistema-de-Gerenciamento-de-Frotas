@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Veiculo */
 
-$this->title = $model->renavam;
+$this->title = "Visualizar Veículo";
 $this->params['breadcrumbs'][] = ['label' => 'Veiculos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -15,8 +15,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->renavam], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->renavam], [
+        <?= Html::a('Atualizar', ['update', 'id' => $model->renavam], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Deletar', ['delete', 'id' => $model->renavam], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
@@ -44,6 +44,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'id_modelo',
             'id_cor',
             'id_tipo_combustivel',
+            'ano_fabricacao',
+            'ano_modelo'
         ],
     ]) ?>
 

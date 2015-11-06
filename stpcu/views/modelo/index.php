@@ -27,17 +27,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            //'id',
             'nome',
-            [
-                'attribute' => 'ano',
-                'filter' => Html::activeDropDownList(
-                    $searchModel,
-                    'ano',
-                    array_combine(range(date('Y')+1,1900,-1),range(date('Y')+1,1900,-1)),
-                    ['class'=>'form-control','prompt'=>'Filtrar'  ]),
-            ],
-
             //'ano',
             [
                 'attribute' => 'id_marca',

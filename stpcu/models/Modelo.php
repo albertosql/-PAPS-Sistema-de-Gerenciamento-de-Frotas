@@ -31,10 +31,10 @@ class Modelo extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nome', 'ano', 'id_marca'], 'required', "message"=>"Este campo é obrigatório"],
+            [['nome', 'id_marca'], 'required', "message"=>"Este campo é obrigatório"],
             [['ano', 'id_marca'], 'integer'],
             [['nome'], 'string', 'max' => 30],
-            [['nome','ano'], 'unique', 'targetAttribute' => ['nome','ano'], "message"=>"Modelo existente no sistema"]
+            [['nome'], 'unique', 'targetAttribute' => ['nome'], "message"=>"Modelo existente no sistema"]
         ];
     }
 
@@ -46,7 +46,6 @@ class Modelo extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'nome' => 'Nome',
-            'ano' => 'Ano',
             'id_marca' => 'Nome da Marca',
         ];
     }

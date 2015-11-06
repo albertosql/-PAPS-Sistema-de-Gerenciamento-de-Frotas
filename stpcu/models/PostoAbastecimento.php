@@ -44,7 +44,7 @@ class PostoAbastecimento extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'nome' => 'Nome',
-            'endereco' => 'Endereco',
+            'endereco' => 'Endereço',
         ];
     }
 
