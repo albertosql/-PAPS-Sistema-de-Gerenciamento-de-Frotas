@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model app\models\Modelo */
 /* @var $marca_lista app\controllers\ModeloController*/
 
-$this->title = 'Atualizar Modelo: ' . ' ' . $model->id;
+$this->title = 'Atualizar Modelo: ' . ' ' . $model->nome;
 $this->params['breadcrumbs'][] = ['label' => 'Modelos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Atualizar';

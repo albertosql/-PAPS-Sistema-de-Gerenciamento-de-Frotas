@@ -32,7 +32,7 @@ class Modelo extends \yii\db\ActiveRecord
     {
         return [
             [['nome', 'id_marca'], 'required', "message"=>"Este campo é obrigatório"],
-            [['ano', 'id_marca'], 'integer'],
+            [['id_marca'], 'integer'],
             [['nome'], 'string', 'max' => 30],
             [['nome'], 'unique', 'targetAttribute' => ['nome'], "message"=>"Modelo existente no sistema"]
         ];
