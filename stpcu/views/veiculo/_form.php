@@ -12,7 +12,7 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'renavam')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'renavam')->textInput() ?>
 
     <?= $form->field($model, 'cidade')->textInput(['maxlength' => true]) ?>
 
@@ -32,28 +32,24 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'uf_anterior')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'placa_atual')->textInput() ?>
+    <?= $form->field($model, 'placa_atual')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'placa_anterior')->textInput() ?>
+    <?= $form->field($model, 'placa_anterior')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'potencia')->textInput() ?>
 
-    <?= $form->field($model, 'id_modelo')->dropDownList($modelo_lista) ?>
+    <?= $form->field($model, 'id_modelo')->textInput() ?>
 
-    <?= $form->field($model, 'id_cor')->dropDownList($cor_lista)?>
+    <?= $form->field($model, 'id_cor')->textInput() ?>
 
-    <?= $form->field($model, 'id_tipo_combustivel')->dropDownList($combustivel_lista)?>
+    <?= $form->field($model, 'id_tipo_combustivel')->textInput() ?>
 
-    <?= $form->field($model, 'ano_fabricacao')->dropDownList(
-        array_combine(range(date('Y')+1,1900,-1),range(date('Y')+1,1900,-1)),
-        $model->getPrompt() ); ?>
+    <?= $form->field($model, 'ano_fabricacao')->textInput() ?>
 
-    <?= $form->field($model, 'ano_modelo')->dropDownList(
-        array_combine(range(date('Y')+1,1900,-1),range(date('Y')+1,1900,-1)),
-        $model->getPrompt() ); ?>
+    <?= $form->field($model, 'ano_modelo')->textInput() ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Novo' : 'Atualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

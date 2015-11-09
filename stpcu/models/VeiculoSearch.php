@@ -5,6 +5,7 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
+use app\models\Veiculo;
 
 /**
  * VeiculoSearch represents the model behind the search form about `app\models\Veiculo`.
@@ -17,8 +18,8 @@ class VeiculoSearch extends Veiculo
     public function rules()
     {
         return [
-            [['renavam', 'num_patrimonio', 'placa_atual', 'placa_anterior', 'potencia', 'id_modelo', 'id_cor', 'id_tipo_combustivel', 'ano_fabricacao', 'ano_modelo'], 'integer'],
-            [['cidade', 'chassi', 'lotacao', 'status', 'observacao', 'adquirido_de', 'uf_atual', 'uf_anterior'], 'safe'],
+            [['renavam', 'num_patrimonio', 'potencia', 'id_modelo', 'id_cor', 'id_tipo_combustivel', 'ano_fabricacao', 'ano_modelo'], 'integer'],
+            [['cidade', 'chassi', 'lotacao', 'status', 'observacao', 'adquirido_de', 'uf_atual', 'uf_anterior', 'placa_atual', 'placa_anterior'], 'safe'],
         ];
     }
 
@@ -57,14 +58,12 @@ class VeiculoSearch extends Veiculo
         $query->andFilterWhere([
             'renavam' => $this->renavam,
             'num_patrimonio' => $this->num_patrimonio,
-            'placa_atual' => $this->placa_atual,
-            'placa_anterior' => $this->placa_anterior,
             'potencia' => $this->potencia,
             'id_modelo' => $this->id_modelo,
             'id_cor' => $this->id_cor,
             'id_tipo_combustivel' => $this->id_tipo_combustivel,
             'ano_fabricacao' => $this->ano_fabricacao,
-            'ano_modelo' => $this->ano_modelo
+            'ano_modelo' => $this->ano_modelo,
         ]);
 
         $query->andFilterWhere(['like', 'cidade', $this->cidade])
@@ -74,7 +73,9 @@ class VeiculoSearch extends Veiculo
             ->andFilterWhere(['like', 'observacao', $this->observacao])
             ->andFilterWhere(['like', 'adquirido_de', $this->adquirido_de])
             ->andFilterWhere(['like', 'uf_atual', $this->uf_atual])
-            ->andFilterWhere(['like', 'uf_anterior', $this->uf_anterior]);
+            ->andFilterWhere(['like', 'uf_anterior', $this->uf_anterior])
+            ->andFilterWhere(['like', 'placa_atual', $this->placa_atual])
+            ->andFilterWhere(['like', 'placa_anterior', $this->placa_anterior]);
 
         return $dataProvider;
     }

@@ -47,6 +47,10 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'id_tipo_combustivel') ?>
 
+    <?php // echo $form->field($model, 'ano_fabricacao') ?>
+
+    <?php // echo $form->field($model, 'ano_modelo') ?>
+
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
         <?= Html::resetButton('Reset', ['class' => 'btn btn-default']) ?>
