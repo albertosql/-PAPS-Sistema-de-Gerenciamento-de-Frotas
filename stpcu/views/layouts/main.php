@@ -78,8 +78,6 @@ AppAsset::register($this);
                                 <li><?php echo Html::a("Cor",['cor/index'])?></li>
                                 <li><?php echo Html::a("Veículo",['veiculo/index'])?></li>
                                 <li><?php echo Html::a("Departamento",['departamento/index'])?></li>
-                                <li><?php echo Html::a("Manutencao",['manutencao/index'])?></li>
-                                <li><?php echo Html::a("Abastecimento",['abastecimento/index'])?></li>
                                 <li><?php echo Html::a("Usuarios",['usuario/index'])?></li>
                                 <!-- <li><?php echo Html::a("Login",['site/login'])?></li> -->
                                 <li><a href="#">Solicitações <span class="badge">10</span></a></li>
@@ -89,8 +87,8 @@ AppAsset::register($this);
                                     </a>
                                     <div class="collapse" id="toggleDemo2" style="height: 0px;">
                                         <ul class="nav nav-list">
-                                            <li><a href="views/manutencao/index">Manutenção</a></li>
-                                            <li><a href="views/abastecimento/index">Abastecimento</a></li>
+                                            <li><?php echo Html::a("Abastecimento", ['abastecimento/index']) ?></li>
+                                            <li><?php echo Html::a("Manutencao", ['manutencao/index']) ?></li>
                                         </ul>
                                     </div>
                                 </li>

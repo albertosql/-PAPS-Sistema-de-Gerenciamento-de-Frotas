@@ -53,5 +53,10 @@ class Marca extends \yii\db\ActiveRecord
         return $this->hasMany(Modelo::className(), ['id_marca' => 'id']);
     }
 
-
+    public function beforeDelete(){
+        if($this->is_required=='no'){
+            return true;
+        }
+        return false;
+    }
 }

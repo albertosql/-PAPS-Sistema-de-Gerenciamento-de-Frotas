@@ -96,11 +96,21 @@ class MarcaController extends Controller
      * @param integer $id
      * @return mixed
      */
+
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
-
-        return $this->redirect(['index']);
+        if($this->request->isPostRequest){ //enforce use of POST
+            $model=$this->findModel($id); // loadModel throws an exception if the record doesn't exist
+            if($model->delete()){
+                // do your redirects here
+            }else{
+                // do something else
+            }
+        }else{
+            throw new CHttpException(400,'Invalid Request');
+        }
+       // $this->findModel($id)->delete();
+       // return $this->redirect(['index']);
     }
 
     /**
