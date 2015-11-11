@@ -70,21 +70,29 @@ class Veiculo extends \yii\db\ActiveRecord
             'renavam' => 'Renavam',
             'cidade' => 'Cidade',
             'chassi' => 'Chassi',
-            'num_patrimonio' => 'Num Patrimonio',
-            'lotacao' => 'Lotacao',
+            'num_patrimonio' => 'Número de  Patrimônio',
+            'lotacao' => 'Lotação',
             'status' => 'Status',
-            'observacao' => 'Observacao',
+            'observacao' => 'Observação',
             'adquirido_de' => 'Adquirido De',
-            'uf_atual' => 'Uf Atual',
-            'uf_anterior' => 'Uf Anterior',
+            'uf_atual' => 'UF Atual',
+            'uf_anterior' => 'UF Anterior',
             'placa_atual' => 'Placa Atual',
             'placa_anterior' => 'Placa Anterior',
-            'potencia' => 'Potencia',
-            'id_modelo' => 'Id Modelo',
-            'id_cor' => 'Id Cor',
-            'id_tipo_combustivel' => 'Id Tipo Combustivel',
-            'ano_fabricacao' => 'Ano Fabricacao',
-            'ano_modelo' => 'Ano Modelo',
+            'potencia' => 'Potência',
+            'id_modelo' => 'Modelo',
+            'id_cor' => 'Cor',
+            'id_tipo_combustivel' => 'Tipo de Combustível',
+            'ano_fabricacao' => 'Ano de Fabricação',
+            'ano_modelo' => 'Ano do Modelo',
+        ];
+    }
+
+    public function getStatus(){
+        return [
+            '1' => 'Leiloado',
+            '2' => 'Disponível',
+            '3' => 'Alocado'
         ];
     }
 
