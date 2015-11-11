@@ -1,7 +1,7 @@
 <?php
 
-use yii\grid\GridView;
 use yii\helpers\Html;
+use yii\grid\GridView;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\VeiculoSearch */
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Novo Veiculo', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Veiculo', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -43,15 +43,6 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'id_tipo_combustivel',
             // 'ano_fabricacao',
             // 'ano_modelo',
-
-            [
-                'attribute' => 'ano_fabricacao',
-                'filter' => Html::activeDropDownList(
-                    $searchModel,
-                    'ano_fabricacao',
-                    array_combine(range(date('Y')+1,1900,-1),range(date('Y')+1,1900,-1)),
-                    ['class'=>'form-control','prompt'=>'Filtrar'  ]),
-            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

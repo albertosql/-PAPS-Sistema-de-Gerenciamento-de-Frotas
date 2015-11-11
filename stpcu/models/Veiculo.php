@@ -17,14 +17,17 @@ use Yii;
  * @property string $adquirido_de
  * @property string $uf_atual
  * @property string $uf_anterior
- * @property integer $placa_atual
- * @property integer $placa_anterior
+ * @property string $placa_atual
+ * @property string $placa_anterior
  * @property integer $potencia
  * @property integer $id_modelo
  * @property integer $id_cor
  * @property integer $id_tipo_combustivel
+ * @property integer $ano_fabricacao
+ * @property integer $ano_modelo
  *
- * @property Gastos[] $gastos
+ * @property Abastecimento[] $abastecimentos
+ * @property Manutencao[] $manutencaos
  * @property RespostaSolicitacao[] $respostaSolicitacaos
  * @property Cor $idCor
  * @property Modelo $idModelo
@@ -46,16 +49,15 @@ class Veiculo extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['renavam', 'cidade', 'chassi', 'num_patrimonio', 'status', 'adquirido_de', 'uf_atual', 'uf_anterior', 'placa_atual', 'placa_anterior', 'potencia', 'id_modelo', 'id_cor', 'id_tipo_combustivel'], 'required', 'message'=>'Este campo é obrigatório'],
-            [['num_patrimonio', 'potencia', 'id_modelo', 'id_cor', 'id_tipo_combustivel'], 'integer'],
+            [['renavam', 'cidade', 'chassi', 'num_patrimonio', 'status', 'adquirido_de', 'uf_atual', 'uf_anterior', 'placa_atual', 'placa_anterior', 'potencia', 'id_modelo', 'id_cor', 'id_tipo_combustivel', 'ano_fabricacao', 'ano_modelo'], 'required'],
+            [['renavam', 'num_patrimonio', 'potencia', 'id_modelo', 'id_cor', 'id_tipo_combustivel', 'ano_fabricacao', 'ano_modelo'], 'integer'],
             [['cidade'], 'string', 'max' => 35],
             [['chassi'], 'string', 'max' => 18],
             [['lotacao'], 'string', 'max' => 30],
             [['status'], 'string', 'max' => 25],
             [['observacao', 'adquirido_de'], 'string', 'max' => 45],
             [['uf_atual', 'uf_anterior'], 'string', 'max' => 2],
-            [['placa_atual', 'placa_anterior'], 'string'],
-            [['renavam'], 'integer']
+            [['placa_atual', 'placa_anterior'], 'string', 'max' => 7]
         ];
     }
 
@@ -65,10 +67,10 @@ class Veiculo extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'renavam' => 'RENAVAM',
+            'renavam' => 'Renavam',
             'cidade' => 'Cidade',
             'chassi' => 'Chassi',
-            'num_patrimonio' => 'Número de Patrimônio',
+            'num_patrimonio' => 'Número de  Patrimônio',
             'lotacao' => 'Lotação',
             'status' => 'Status',
             'observacao' => 'Observação',
@@ -78,28 +80,36 @@ class Veiculo extends \yii\db\ActiveRecord
             'placa_atual' => 'Placa Atual',
             'placa_anterior' => 'Placa Anterior',
             'potencia' => 'Potência',
-            'id_modelo' => 'Nome do Modelo',
-            'id_cor' => 'Nome da Cor',
-            'id_tipo_combustivel' => 'Tipo Combustível',
+            'id_modelo' => 'Modelo',
+            'id_cor' => 'Cor',
+            'id_tipo_combustivel' => 'Tipo de Combustível',
             'ano_fabricacao' => 'Ano de Fabricação',
             'ano_modelo' => 'Ano do Modelo',
+        ];
+    }
+
+    public function getStatus(){
+        return [
+            '1' => 'Leiloado',
+            '2' => 'Disponível',
+            '3' => 'Alocado'
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getManutencao()
+    public function getAbastecimentos()
     {
-        return $this->hasMany(Manutencao::className(), ['id_veiculo' => 'renavam']);
+        return $this->hasMany(Abastecimento::className(), ['id_veiculo' => 'renavam']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getAbastecimento()
+    public function getManutencaos()
     {
-        return $this->hasMany(Abastecimento::className(), ['id_veiculo' => 'renavam']);
+        return $this->hasMany(Manutencao::className(), ['id_veiculo' => 'renavam']);
     }
 
     /**
@@ -113,11 +123,6 @@ class Veiculo extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-
-    public function getPrompt(){
-        return ['prompt'=>'Selecione uma opção'];
-    }
-
     public function getIdCor()
     {
         return $this->hasOne(Cor::className(), ['id' => 'id_cor']);
