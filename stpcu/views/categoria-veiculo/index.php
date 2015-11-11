@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\CategoriaVeiculoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Categoria Veiculos';
+$this->title = 'Categorias de Veículos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="categoria-veiculo-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Categoria Veiculo', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Nova Categoria de Veículo', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            //'id',
             'nome',
 
             ['class' => 'yii\grid\ActionColumn'],

@@ -54,14 +54,14 @@ class Manutencao extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'data_entrada' => 'Data Entrada',
-            'servico' => 'Servico',
+            'data_entrada' => 'Data de Entrada',
+            'servico' => 'Serviço',
             'custo' => 'Custo',
-            'data_saida' => 'Data Saida',
+            'data_saida' => 'Data de Saída',
             'tipo' => 'Tipo',
-            'data_lancamento' => 'Data Lancamento',
-            'id_veiculo' => 'Id Veiculo',
-            'km' => 'Km',
+            'data_lancamento' => 'Data de Lançamento',
+            'id_veiculo' => 'Id Veículo',
+            'km' => 'Kilometragem do Veículo',
             'id_motorista' => 'Id Motorista',
         ];
     }
