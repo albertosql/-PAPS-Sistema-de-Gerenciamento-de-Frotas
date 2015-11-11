@@ -50,14 +50,15 @@ class Veiculo extends \yii\db\ActiveRecord
     {
         return [
             [['renavam', 'cidade', 'chassi', 'num_patrimonio', 'status', 'adquirido_de', 'uf_atual', 'uf_anterior', 'placa_atual', 'placa_anterior', 'potencia', 'id_modelo', 'id_cor', 'id_tipo_combustivel', 'ano_fabricacao', 'ano_modelo'], 'required'],
-            [['renavam', 'num_patrimonio', 'potencia', 'id_modelo', 'id_cor', 'id_tipo_combustivel', 'ano_fabricacao', 'ano_modelo'], 'integer'],
+            [['renavam', 'num_patrimonio', 'id_modelo', 'id_cor', 'id_tipo_combustivel', 'ano_fabricacao', 'ano_modelo'], 'integer'],
             [['cidade'], 'string', 'max' => 35],
+            [['potencia'], 'string', 'max' => 5],
             [['chassi'], 'string', 'max' => 18],
             [['lotacao'], 'string', 'max' => 30],
             [['status'], 'string', 'max' => 25],
-            [['observacao', 'adquirido_de'], 'string', 'max' => 45],
+            [['observacao', 'adquirido_de'], 'string', 'max' => 400],
             [['uf_atual', 'uf_anterior'], 'string', 'max' => 2],
-            [['placa_atual', 'placa_anterior'], 'string', 'max' => 7]
+            [['placa_atual', 'placa_anterior'], 'string', 'max' => 9]
         ];
     }
 

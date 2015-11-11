@@ -28,7 +28,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'status')->dropDownList($model->getStatus(), ['prompt'=>'Selecione uma opção']) ?>
 
-    <?= $form->field($model, 'observacao')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'observacao')->textarea(['rows'=>'10'])?>
 
     <?= $form->field($model, 'adquirido_de')->textInput(['maxlength' => true]) ?>
 
@@ -51,6 +51,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'ano_fabricacao')->dropDownList(array_combine(range(date('Y')+1,1900,-1),range(date('Y')+1,1900,-1)), ['prompt'=>'Selecione uma opção']) ?>
 
     <?= $form->field($model, 'ano_modelo')->dropDownList(array_combine(range(date('Y')+1,1900,-1),range(date('Y')+1,1900,-1)), ['prompt'=>'Selecione uma opção']) ?>
+
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Novo' : 'Atualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
