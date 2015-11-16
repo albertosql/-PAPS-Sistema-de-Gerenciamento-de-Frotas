@@ -60,9 +60,9 @@ class Manutencao extends \yii\db\ActiveRecord
             'data_saida' => 'Data de Saída',
             'tipo' => 'Tipo',
             'data_lancamento' => 'Data de Lançamento',
-            'id_veiculo' => 'Id Veículo',
-            'km' => 'Kilometragem do Veículo',
-            'id_motorista' => 'Id Motorista',
+            'id_veiculo' => 'Veículo',
+            'km' => 'Quilometragem do Veículo',
+            'id_motorista' => 'Motorista',
         ];
     }
 
