@@ -81,4 +81,13 @@ class Manutencao extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Veiculo::className(), ['renavam' => 'id_veiculo']);
     }
+
+    public static function getTipo(){
+        return ["Preventiva" => "Preventiva",
+            "Corretiva" => "Corretiva"];
+    }
+
+    public static function getPrompt(){
+        return ['prompt'=>'Selecione uma opção'];
+    }
 }

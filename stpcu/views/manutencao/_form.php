@@ -20,7 +20,7 @@ use \app\models\Motorista;
 
     <?= $form->field($model, 'custo')->textInput() ?>
 
-    <?= $form->field($model, 'tipo')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'tipo')->dropDownList($model->getTipo(), $model->getPrompt()) ?>
 
     <?= $form->field($model, 'data_entrada')->widget(
         DatePicker::className(), [
