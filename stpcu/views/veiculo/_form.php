@@ -6,6 +6,7 @@ use app\models\Cor;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\widgets\MaskedInput;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Veiculo */
@@ -16,13 +17,22 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'renavam')->textInput() ?>
+    <?= $form->field($model, 'renavam')->textInput()->hint('Ex.: 00123456789')
+        ->widget(MaskedInput::className(), [
+        'mask' => '99999999999',
+    ]) ?>
 
     <?= $form->field($model, 'cidade')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'chassi')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'chassi')->textInput()->hint('Ex.: 9BWHE21JX24060960')
+        ->widget(MaskedInput::className(), [
+        'mask' => '*****************',
+    ]) ?>
 
-    <?= $form->field($model, 'num_patrimonio')->textInput() ?>
+    <?= $form->field($model, 'num_patrimonio')->textInput()->hint('Ex.: 723190')
+        ->widget(MaskedInput::className(), [
+        'mask' => '999999',
+    ]) ?>
 
     <?= $form->field($model, 'lotacao')->textInput(['maxlength' => true]) ?>
 
