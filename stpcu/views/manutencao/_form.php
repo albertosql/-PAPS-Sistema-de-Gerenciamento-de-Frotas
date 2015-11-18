@@ -7,6 +7,7 @@ use yii\widgets\ActiveForm;
 use \app\models\Veiculo;
 use \app\models\Motorista;
 
+
 /* @var $this yii\web\View */
 /* @var $model app\models\Manutencao */
 /* @var $form yii\widgets\ActiveForm */
@@ -27,6 +28,7 @@ use \app\models\Motorista;
             // inline too, not bad
             'inline' => false,
             'language' => 'pt',
+            //'size' => 'xs',
             // modify template for custom rendering
             //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
             'clientOptions' => [
@@ -56,6 +58,11 @@ use \app\models\Motorista;
             // modify template for custom rendering
             //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
             'clientOptions' => [
+               // 'calendarWeeks' => true,
+                //'daysOfWeekDisabled' => [0, 6],
+                //'startView' => 1,
+                //'minView' => 0,
+                //'maxView' => 1,
                 'autoclose' => true,
                 'format' => 'dd-mm-yyyy'
             ]
