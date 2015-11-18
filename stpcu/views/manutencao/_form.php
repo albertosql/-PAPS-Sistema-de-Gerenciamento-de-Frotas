@@ -33,7 +33,7 @@ use \app\models\Motorista;
             //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
             'clientOptions' => [
                 'autoclose' => true,
-                'format' => 'dd-mm-yyyy'
+                'format' => 'yyyy-mm-dd'
             ]
         ]);?>
 
@@ -46,28 +46,9 @@ use \app\models\Motorista;
             //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
             'clientOptions' => [
                 'autoclose' => true,
-                'format' => 'dd-mm-yyyy'
+                'format' => 'yyyy-mm-dd'
             ]
         ]);?>
-
-    <?= $form->field($model, 'data_lancamento')->widget(
-        DatePicker::className(), [
-            // inline too, not bad
-            'inline' => false,
-            'language' => 'pt',
-            // modify template for custom rendering
-            //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
-            'clientOptions' => [
-               // 'calendarWeeks' => true,
-                //'daysOfWeekDisabled' => [0, 6],
-                //'startView' => 1,
-                //'minView' => 0,
-                //'maxView' => 1,
-                'autoclose' => true,
-                'format' => 'dd-mm-yyyy'
-            ]
-        ]);?>
-
 
     <?= $form->field($model, 'id_veiculo')->dropDownList(ArrayHelper::map(Veiculo::find()->all(), 'renavam', 'placa_atual'), ['prompt'=>'Selecione uma opção']) ?>
 
