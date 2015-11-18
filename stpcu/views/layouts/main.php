@@ -73,15 +73,13 @@ AppAsset::register($this);
                                 <li><?php echo Html::a("Marca", ['marca/index']) ?></li>
                                 <li><?php echo Html::a("Modelo", ['modelo/index']) ?></li>
                                 <li><?php echo Html::a("Motorista",['motorista/index'])?></li>
-                                <li><?php echo Html::a("Tipo Combustível",['tipo-combustivel/index'])?></li>
-                                <li><?php echo Html::a("Posto Abastecimento",['posto-abastecimento/index'])?></li>
+                                <li><?php echo Html::a("Tipo de Combustível",['tipo-combustivel/index'])?></li>
+                                <li><?php echo Html::a("Posto de Abastecimento",['posto-abastecimento/index'])?></li>
                                 <li><?php echo Html::a("Cor",['cor/index'])?></li>
                                 <li><?php echo Html::a("Veículo",['veiculo/index'])?></li>
                                 <li><?php echo Html::a("Departamento",['departamento/index'])?></li>
-                                <li><?php echo Html::a("Usuarios",['usuario/index'])?></li>
-                                <li><?php echo Html::a("Abastecimento",['abastecimento/index'])?></li>
+                                <li><?php echo Html::a("Usuários",['usuario/index'])?></li>
                                 <li><?php echo Html::a("Categoria de Veículo",['categoria-veiculo/index'])?></li>
-                                <li><?php echo Html::a("Manutenção",['manutencao/index'])?></li>
                                 <!-- <li><?php echo Html::a("Login",['site/login'])?></li> -->
                                 <li><a href="#">Solicitações <span class="badge">10</span></a></li>
                                 <li class="active">
@@ -91,7 +89,7 @@ AppAsset::register($this);
                                     <div class="collapse" id="toggleDemo2" style="height: 0px;">
                                         <ul class="nav nav-list">
                                             <li><?php echo Html::a("Abastecimento", ['abastecimento/index']) ?></li>
-                                            <li><?php echo Html::a("Manutencao", ['manutencao/index']) ?></li>
+                                            <li><?php echo Html::a("Manutenção", ['manutencao/index']) ?></li>
                                         </ul>
                                     </div>
                                 </li>
