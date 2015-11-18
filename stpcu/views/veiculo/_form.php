@@ -17,10 +17,12 @@ use yii\widgets\MaskedInput;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'renavam')->textInput()->hint('Ex.: 00123456789')
+    <?= $form->field($model, 'renavam')->textInput(['maxlength'=>10,'style'=>'width:200px'])
+        ->hint('Ex.: 00123456789')
         ->widget(MaskedInput::className(), [
-        'mask' => '99999999999',
-    ]) ?>
+            'mask' => '99999999999',
+        ])
+    ?>
 
     <?= $form->field($model, 'cidade')->textInput(['maxlength' => true]) ?>
 
