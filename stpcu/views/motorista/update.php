@@ -7,7 +7,7 @@ use yii\helpers\Html;
 
 $this->title = 'Atualizar Motorista: ' . ' ' . $model->nome;
 $this->params['breadcrumbs'][] = ['label' => 'Motoristas', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->cnh, 'url' => ['view', 'id' => $model->cnh]];
+$this->params['breadcrumbs'][] = ['label' => $model->nome, 'url' => ['view', 'id' => $model->cnh]];
 $this->params['breadcrumbs'][] = 'Atualizar';
 ?>
 <div class="motorista-update">
