@@ -37,7 +37,7 @@ class Manutencao extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'servico', 'custo', 'tipo', 'id_veiculo', 'km', 'id_motorista'], 'required'],
+            [['servico', 'custo', 'tipo', 'id_veiculo', 'km', 'id_motorista'], 'required'],
             [['id', 'id_veiculo', 'km'], 'integer'],
             [['data_entrada', 'data_saida', 'data_lancamento'], 'safe'],
             [['custo'], 'number'],
