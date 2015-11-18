@@ -37,7 +37,7 @@ class Abastecimento extends \yii\db\ActiveRecord
     {
         return [
             [['preco_litro'], 'number'],
-            [['preco_litro','id_posto', 'id_veiculo', 'km', 'data_lancamento', 'id_motorista'], 'required'],
+            [['preco_litro','id_posto', 'id_veiculo', 'km', 'id_motorista'], 'required'],
             [['id_posto', 'id_veiculo', 'km'], 'integer'],
             [['data_lancamento', 'data_abastecimento'], 'safe'],
             [['id_motorista'], 'string', 'max' => 11]
