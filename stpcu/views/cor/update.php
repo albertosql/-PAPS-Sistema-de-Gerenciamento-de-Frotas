@@ -8,7 +8,7 @@ use yii\helpers\Html;
 $this->title = 'Atualizar Cor: ' . ' ' . $model->nome;
 $this->params['breadcrumbs'][] = ['label' => 'Cores', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->nome, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Atualizar';
 ?>
 <div class="cor-update">
 

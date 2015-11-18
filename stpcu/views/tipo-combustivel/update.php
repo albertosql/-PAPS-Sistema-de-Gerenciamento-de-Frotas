@@ -8,7 +8,7 @@ use yii\helpers\Html;
 $this->title = 'Atualizar Tipo de Combustível: ' . ' ' . $model->nome;
 $this->params['breadcrumbs'][] = ['label' => 'Tipo de Combustível', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->nome, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Atualizar';
 ?>
 <div class="tipo-combustivel-update">
 
