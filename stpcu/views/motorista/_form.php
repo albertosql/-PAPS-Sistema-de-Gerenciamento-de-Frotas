@@ -16,7 +16,7 @@ use yii\widgets\MaskedInput;
 
     <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'cnh') -> widget(\yii\widgets\MaskedInput::className(), [
+    <?= $form->field($model, 'cnh') -> widget(MaskedInput::className(), [
         'mask' => '99999999999',
     ])
     ?>

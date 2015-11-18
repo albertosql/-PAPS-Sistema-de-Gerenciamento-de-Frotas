@@ -1,5 +1,10 @@
 <?php
 
+use app\models\Motorista;
+use app\models\PostoAbastecimento;
+use app\models\Veiculo;
+use dosamigos\datepicker\DatePicker;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -14,20 +19,30 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'preco_litro')->textInput() ?>
 
-    <?= $form->field($model, 'id_posto')->textInput() ?>
+    <?= $form->field($model, 'id_posto')->dropDownList(ArrayHelper::map(PostoAbastecimento::find()->all(), 'id', 'nome'), ['prompt'=>'Selecione uma opção']) ?>
 
-    <?= $form->field($model, 'id_veiculo')->textInput() ?>
+    <?= $form->field($model, 'id_veiculo')->dropDownList(ArrayHelper::map(Veiculo::find()->all(), 'renavam', 'placa_atual'), ['prompt'=>'Selecione uma opção']) ?>
 
     <?= $form->field($model, 'km')->textInput() ?>
 
-    <?= $form->field($model, 'data_lancamento')->textInput() ?>
+    <?= $form->field($model, 'data_lancamento')->textInput(['value'=>date('Y-m-d'), 'disabled'=>'true'])  ?>
 
-    <?= $form->field($model, 'id_motorista')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'id_motorista')->dropDownList(ArrayHelper::map(Motorista::find()->all(), 'cnh', 'nome'), ['prompt'=>'Selecione uma opção']) ?>
 
-    <?= $form->field($model, 'data_abastecimento')->textInput() ?>
-
+    <?= $form->field($model, 'data_abastecimento')->widget(
+        DatePicker::className(), [
+            // inline too, not bad
+            'inline' => false,
+            'language' => 'pt',
+            // modify template for custom rendering
+            //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
+            'clientOptions' => [
+                'autoclose' => true,
+                'format' => 'yyyy-mm-dd'
+            ]
+        ]);?>
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Novo' : 'Atualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
