@@ -25,8 +25,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'km')->textInput() ?>
 
-    <?= $form->field($model, 'data_lancamento')->textInput(['value'=>date('Y-m-d'), 'disabled'=>'true'])  ?>
-
     <?= $form->field($model, 'id_motorista')->dropDownList(ArrayHelper::map(Motorista::find()->all(), 'cnh', 'nome'), ['prompt'=>'Selecione uma opção']) ?>
 
     <?= $form->field($model, 'data_abastecimento')->widget(
