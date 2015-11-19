@@ -43,7 +43,8 @@ class Manutencao extends \yii\db\ActiveRecord
             [['custo'], 'number'],
             [['servico'], 'string', 'max' => 45],
             [['tipo'], 'string', 'max' => 25],
-            [['id_motorista'], 'string', 'max' => 11]
+            [['id_motorista'], 'string', 'max' => 11],
+            ['data_saida','compare','compareAttribute'=>'data_entrada','operator'=>'>=',"message"=>'Start Date must be less than End Date']
         ];
     }
 
