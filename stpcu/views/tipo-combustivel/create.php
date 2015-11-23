@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\TipoCombustivel */
 
-$this->title = 'Novo Tipo Combustível';
+$this->title = 'Novo Tipo de Combustível';
 $this->params['breadcrumbs'][] = ['label' => 'Tipo Combustível', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
