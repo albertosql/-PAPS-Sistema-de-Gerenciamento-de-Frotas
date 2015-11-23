@@ -58,7 +58,8 @@ class Veiculo extends \yii\db\ActiveRecord
             [['status'], 'string', 'max' => 25],
             [['observacao', 'adquirido_de'], 'string', 'max' => 400],
             [['uf_atual', 'uf_anterior'], 'string', 'max' => 2],
-            [['placa_atual', 'placa_anterior'], 'string', 'max' => 9]
+            [['placa_atual', 'placa_anterior'], 'string', 'max' => 9],
+            [['renavam'], 'unique', 'message'=>'Veículo já cadastrada no sistema']
         ];
     }
 
